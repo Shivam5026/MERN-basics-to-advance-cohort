@@ -17,5 +17,5 @@ function calculateTime(n) {
     let timeAfter = new Date().getTime();
     return timeAfter - timeBefore;
 }
-
+// update the input by 100,100000,10000000
 console.log(calculateTime(100000));
