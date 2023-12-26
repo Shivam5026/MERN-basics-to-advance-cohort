@@ -148,19 +148,19 @@
 // setInterval(greet, 1*3000);
 // setTimeout(greet, 1*3000);
 
-// let start = 30;
-// function counter(){
-//     console.log(start);
+let start = 30;
+function counter(){
+    console.log(start);
 
-//     if(start === 0){
-//         clearInterval(interval_ID)
-//         console.log("countdown complete")
-//     }
-//     else{
-//         start--;
-//     }
-// }
-// const interval_ID = setInterval(counter,1*1000);
+    if(start === 0){
+        clearInterval(interval_ID)
+        console.log("countdown complete")
+    }
+    else{
+        start--;
+    }
+}
+const interval_ID = setInterval(counter,1*1000);
 
 // function innerFunction() {
 //     const endTime = performance.now();
@@ -179,12 +179,12 @@
 // and then joins them back into a single string.
 // This can be useful in situations where you want to reorder the characters in a string alphabetically.
 
-function isPalindrome(str) {
-    const word = str.toLowerCase().replace(/[^a-z0-9]/g, '');
-    console.log(word);
-    console.log(word.split('').reverse().join(''));
+// function isPalindrome(str) {
+//     const word = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+//     console.log(word);
+//     console.log(word.split('').reverse().join(''));
 
-    return  word === word.split('').reverse().join('');
-}
-  const word = isPalindrome("Nan");
-console.log(word);
+//     return  word === word.split('').reverse().join('');
+// }
+//   const word = isPalindrome("Nan");
+// console.log(word);

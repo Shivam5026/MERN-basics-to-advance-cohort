@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        .container{
+            /* display: flex; */
+            background-color: aquamarine;
+            font-size: 44;
+            padding: 20;
+            margin: 50;
+            color: violet;
+        }
+        </style>
+        <script>
+            let timeout;
+            debouncePopulatediv=()=>{
+                clearTimeout(timeout);
+                timeout = setTimeout(()=>{
+                    populateDiv();
+                },1000);
+
+            }
+            populateDiv=()=>{
+                const a = document.getElementById("num1").value;
+                const b = document.getElementById("num2").value;
+                
+                fetch("https://sum-server.100xdevs.com/sum?a="+a+"&b="+b)
+                .then(function(response){
+                    response.text()
+                    .then(function(ans){
+                        document.getElementById("finalSum").innerHTML = ans;
+                    })
+                })
+                // const element = document.getElementById("finalSum").innerHTML = sum;
+            }
+            
+        </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="container" id="calculate">
+        First number: <input oninput="debouncePopulatediv()" type="text" id="num1" placeholder="enter number">
+        <br>
+        <br>
+        Second number: <input oninput="debouncePopulatediv()" type="text" id="num2" placeholder="enter number">
+        <br>
+        <br>
+        <!-- <button onclick="populateDiv()">calculate Sum</button> -->
+    </form>
+    <div id="finalSum">
+        here
+    </div>
+</body>
+</html>
